@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tribute to Netaji Subhas Chandra Bose</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFD700;
+            text-align: center;
+        }
+
+        header {
+            background-color: #B22222;
+            color: #FFF;
+            padding: 10px;
+        }
+
+        #content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #content img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px;
+            display: none;
+        }
+
+        #right-panel {
+            flex: 1;
+            order: 2;
+            padding: 20px;
+        }
+
+        #radio-buttons {
+            background-color: #B22222;
+            padding: 10px;
+            color: #FFF;
+        }
+
+        section {
+            text-align: left;
+            margin: 20px;
+            display: none;
+        }
+
+        footer {
+            background-color: #B22222;
+            color: #FFF;
+            padding: 10px;
+        }
+
+        .attractive {
+            color: #FFD700;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="attractive">Tribute to Netaji Subhas Chandra Bose</h1>
+    </header>
+
+    <div id="content">
+        <div id="right-panel">
+            <h2 class="attractive">Netaji Subhas Chandra Bose</h2>
+            <img src="nethaji1.jpg">
+            <img src="C:\Users\ELCOT\Desktop\nethaji2.jpg">
+            <img src="?C:\Users\ELCOT\Desktop\nethaji3.jpg">
+            <img src="?C:\Users\ELCOT\Desktop\nethaji4.jpg">
+            <img src="?C:\Users\ELCOT\Desktop\nethaji5.jpg">
+        </div>
+
+        <div id="radio-buttons">
+            <label><input type="radio" name="section" value="about" checked class="attractive"> About Netaji</label>
+            <label><input type="radio" name="section" value="history" class="attractive"> History</label>
+            <label><input type="radio" name="section" value="quotes" class="attractive"> Quotes</label>
+            <label><input type="radio" name="section" value="war" class="attractive"> War Details</label>
+            <label><input type="radio" name="section" value="hitler" class="attractive"> Meeting with Hitler</label>
+        </div>
+
+        <section id="about">
+            <h2 class="attractive">About Netaji Subhas Chandra Bose</h2>
+            <p>
+                Subhas Chandra Bose, also known as Netaji, was a prominent Indian nationalist leader who played a key role in India's struggle for independence against British colonial rule. He was born on January 23, 1897, in Cuttack, Odisha.
+                Subhas Bose was born into wealth and privilege in a large Bengali family in Orissa during the British Raj. The early recipient of an Anglocentric education, he was sent after college to England to take the Indian Civil Service examination. He succeeded with distinction in the vital first exam but demurred at taking the routine final exam, citing nationalism as a higher calling. Returning to India in 1921, Bose joined the nationalist movement led by Mahatma Gandhi and the Indian National Congress. He followed Jawaharlal Nehru to leadership in a group within the Congress which was less keen on constitutional reform and more open to socialism.[i] Bose became Congress president in 1938. After reelection in 1939, differences arose between him and the Congress leaders, including Gandhi, over the future federation of British India and princely states, but also because discomfort had grown among the Congress leadership over Bose's negotiable attitude to non-violence, and his plans for greater powers f                or himself.After the large majority of the Congress Working Committee members resigned in protest,Bose resigned as president and was eventually ousted from the party.
+            </p>
+        </section>
+
+        <section id="history">
+            <h2 class="attractive">History</h2>
+            <p>
+                Netaji Subhas Chandra Bose was an influential leader in the Indian National Congress. However, he later formed the Forward Bloc and sought help from Axis powers during World War II to free India from British rule.
+            </p>
+        </section>
+
+        <section id="quotes">
+            <h2 class="attractive">Quotes</h2>
+            <blockquote>
+                "Give me blood, and I shall give you freedom."
+                <br> - Netaji Subhas Chandra Bose
+            </blockquote>
+        </section>
+
+        <section id="war">
+            <h2 class="attractive">War Details</h2>
+            <p>
+                Netaji Subhas Chandra Bose organized the Indian National Army (INA) to fight alongside the Axis powers against the British in Burma and Northeast India. This was a pivotal moment in India's struggle for independence.
+            </p>
+        </section>
+
+        <section id="hitler">
+            <h2 class="attractive">Meeting with Hitler</h2>
+            <p>
+                Netaji Subhas Chandra Bose sought support from various world leaders, including Adolf Hitler, in his quest for Indian independence. He met Hitler in Berlin in 1942 to gain support for India's cause.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p class="attractive">Created by [MUTHUSANTHURU S]</p>
+    </footer>
+
+    <script>
+        const sections = ["about", "history", "quotes", "war", "hitler"];
+        const slideshow = document.getElementById("right-panel");
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+
+        // Function to show/hide sections and the slideshow
+        function toggleSections() {
+            const selectedSection = document.querySelector('input[type="radio"]:checked').value;
+            sections.forEach(sectionName => {
+                const section = document.getElementById(sectionName);
+                if (sectionName === selectedSection) {
+                    section.style.display = "block";
+                } else {
+                    section.style.display = "none";
+                }
+            });
+            if (selectedSection === "about") {
+                slideshow.style.display = "block";
+            } else {
+                slideshow.style.display = "none";
+            }
+        }
+
+        // Event listener for radio buttons
+        radioButtons.forEach(button => {
+            button.addEventListener("change", toggleSections);
+        });
+
+        // Initialize by showing the default section
+        toggleSections();
+    </script>
+
+</body>
+
+</html>
